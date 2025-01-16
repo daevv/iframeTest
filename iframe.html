@@ -5,10 +5,18 @@
   <title>PostMessage Listener</title>
 </head>
 <body>
-  <script>
-    window.addEventListener('message', (event) => {
-      console.log('Received message:', event.data);
-    });
-  </script>
+<h1>Received Message:</h1>
+<div id="messageDisplay" style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
+  No message received yet.
+</div>
+
+<script>
+  const messageDisplay = document.getElementById('messageDisplay');
+
+  window.addEventListener('message', (event) => {
+    console.log('Received message:', event.data);
+    messageDisplay.textContent = event.data;
+  });
+</script>
 </body>
 </html>
